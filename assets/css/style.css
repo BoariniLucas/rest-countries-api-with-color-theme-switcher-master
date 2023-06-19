@@ -1,0 +1,43 @@
+:root {
+    --principalFont: 'Nunito Sans', sans-serif;
+    --headerDivisorColor: #efefef;
+}
+
+body {
+    font-family: var(--principalFont);
+    font-size: 16px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5em;
+    width: 100vw;
+    padding: 1em 2em;
+    box-sizing: border-box;
+    border-bottom: solid 2px var(--headerDivisorColor);
+}
+
+h1 {
+    font-size: 1.1em;
+    font-weight: 800;
+}
+
+.switch-theme {
+    display: flex;
+    align-items: center;
+}
+
+.switch-theme:hover {
+    cursor: pointer;
+}
+
+.switch-theme p {
+    font-weight: 600;
+    margin-left: 0.3em;
+}
+
+#switch-theme {
+    visibility: hidden;
+}
