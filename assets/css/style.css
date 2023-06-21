@@ -1,5 +1,7 @@
 :root {
     --principalFont: 'Nunito Sans', sans-serif;
+    --headerBgColor: none;
+    --headerTextColor: #000000;
     --headerDivisorColor: #efefef;
 }
 
@@ -17,11 +19,21 @@ header {
     padding: 1em 2em;
     box-sizing: border-box;
     border-bottom: solid 2px var(--headerDivisorColor);
+    background-color: var(--headerBgColor);
 }
+
+main {
+    background-color: red;
+}
+
+
+/* continuar desenvolvimento do input e o menu Dropdown */
+/*  https://www.w3schools.com/howto/howto_js_dropdown.asp  */
 
 h1 {
     font-size: 1.1em;
     font-weight: 800;
+    color: var(--headerTextColor);
 }
 
 .switch-theme {
@@ -36,6 +48,7 @@ h1 {
 .switch-theme p {
     font-weight: 600;
     margin-left: 0.3em;
+    color: var(--headerTextColor);
 }
 
 #switch-theme {
