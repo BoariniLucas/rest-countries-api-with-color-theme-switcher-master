@@ -1,5 +1,7 @@
 const switchTheme = document.querySelector('#switch-theme');
 const btnImgTheme = document.querySelector('#btn-img-theme');
+const btnDrop = document.querySelector('#dropbtn');
+
 
 let theme = 1;
 
@@ -26,4 +28,20 @@ switchTheme.addEventListener('change', () => {
         theme = 1;
     }
 
+});
+
+btnDrop.addEventListener('click', () => {
+    const dropdown = document.querySelector('#dropdown');
+    
+    if(dropdown.classList.contains("hidden")) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("visible");
+
+        dropdown.style.visibility = "visible"
+    } else {
+        dropdown.classList.remove("visible");
+        dropdown.classList.add("hidden");
+
+        dropdown.style.visibility = "hidden"
+    }
 });
