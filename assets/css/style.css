@@ -3,6 +3,7 @@
     --headerBgColor: none;
     --headerTextColor: #000000;
     --headerDivisorColor: #efefef;
+    --shadowBoxColor: #cac4c4;
 }
 
 body {
@@ -23,9 +24,55 @@ header {
 }
 
 main {
-    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5em 2em;
+    box-sizing: border-box;
+    /*background-color: red;*/
 }
 
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4em;
+    width: 100%;
+    /*background-color: green;*/
+}
+
+.search-country {
+    height: 3em;
+    width: 25em;
+    border-radius: 3px;
+    border: none;
+    padding: 0 0.8em;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 20px 1px var(--shadowBoxColor);
+    background: url(../images/search-outline.svg) no-repeat;    
+}
+
+/* continuar desenvolvimento input search*/
+
+.dropbtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5em;
+    width: 12em;
+    border-radius: 3px;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 20px 1px var(--shadowBoxColor);
+}
+
+.dropbtn:hover {
+    cursor: pointer;
+}
+
+.dropbtn p {
+    font-size: 0.9em;
+    font-weight: 600;
+}
 
 /* continuar desenvolvimento do input e o menu Dropdown */
 /*  https://www.w3schools.com/howto/howto_js_dropdown.asp  */
