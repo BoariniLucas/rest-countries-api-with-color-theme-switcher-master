@@ -23,7 +23,7 @@ switchTheme.addEventListener('change', () => {
 
         document.body.style.setProperty('--headerTextColor', '#000000');
         document.body.style.setProperty('--headerDivisorColor', '#efefef');
-        document.body.style.setProperty('--headerBgColor', 'none');
+        document.body.style.setProperty('--headerBgColor', '#ffffff');
 
         theme = 1;
     }

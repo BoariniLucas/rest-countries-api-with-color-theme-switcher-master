@@ -1,14 +1,17 @@
 :root {
     --principalFont: 'Nunito Sans', sans-serif;
-    --headerBgColor: none;
+    --whiteColor: #fff;
+    --bgColor: #fafafa;
+    --headerBgColor: #fff;
     --headerTextColor: #000000;
     --headerDivisorColor: #efefef;
-    --shadowBoxColor: #cac4c4;
+    --shadowBoxColor: #e6e0e0;    
 }
 
 body {
     font-family: var(--principalFont);
     font-size: 16px;
+    background-color: var(--bgColor);
 }
 
 header {
@@ -16,7 +19,6 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 3.5em;
-    width: 100vw;
     padding: 1em 2em;
     box-sizing: border-box;
     border-bottom: solid 2px var(--headerDivisorColor);
@@ -28,7 +30,17 @@ main {
     flex-wrap: wrap;
     padding: 1.5em 2em;
     box-sizing: border-box;
-    /*background-color: red;*/
+}
+
+h1 {
+    font-size: 1.1em;
+    font-weight: 800;
+    color: var(--headerTextColor);
+}
+
+h2 {
+    font-weight: 800;
+    margin: 1.5em 0 1em;
 }
 
 .search-container {
@@ -37,7 +49,6 @@ main {
     align-items: center;
     height: 4em;
     width: 100%;
-    /*background-color: green;*/
 }
 
 .search-country {
@@ -45,13 +56,14 @@ main {
     width: 25em;
     border-radius: 3px;
     border: none;
-    padding: 0 0.8em;
+    padding: 0 3em;
     box-sizing: border-box;
-    box-shadow: 2px 2px 20px 1px var(--shadowBoxColor);
-    background: url(../images/search-outline.svg) no-repeat;    
+    box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+    background: url(../images/search-outline.svg) no-repeat;
+    background-size: 1.5em;
+    background-position: 1em;
+    background-color: var(--whiteColor);
 }
-
-/* continuar desenvolvimento input search*/
 
 .dropbtn {
     display: flex;
@@ -62,7 +74,8 @@ main {
     border-radius: 3px;
     padding: 0 0.5em;
     box-sizing: border-box;
-    box-shadow: 2px 2px 20px 1px var(--shadowBoxColor);
+    box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+    background-color: var(--whiteColor);
 }
 
 .dropbtn:hover {
@@ -89,21 +102,13 @@ main {
     padding: 0.5em 1em;
     box-sizing: border-box;
     border-radius: 3px;
-    box-shadow: 2px 2px 20px 1px var(--shadowBoxColor);
+    box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+    background-color: var(--whiteColor);
 }
 
 .dropdown a {
     font-weight: 600;
     margin: 0.2em 0;
-}
-
-/* continuar desenvolvimento do input e o menu Dropdown */
-/*  https://www.w3schools.com/howto/howto_js_dropdown.asp  */
-
-h1 {
-    font-size: 1.1em;
-    font-weight: 800;
-    color: var(--headerTextColor);
 }
 
 .switch-theme {
@@ -123,4 +128,49 @@ h1 {
 
 #switch-theme {
     visibility: hidden;
+}
+
+.countries-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    flex-wrap: wrap;
+    margin-top: 1.5em;
+}
+
+.country-container {
+    height: 20em;
+    width: 16em;
+    margin: 0.5em 1.8em;
+    margin-top: 1;
+    border-radius: 5px;
+    background-color: var(--whiteColor);
+    box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+}
+
+.flag {
+    height: 10em;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: url(https://flagcdn.com/de.svg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.info-country-container {
+    padding: 0 1em;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.info-country-container p {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0.5em 0;
+}
+
+.info-country-container strong {
+    font-weight: 300;
 }
