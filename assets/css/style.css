@@ -27,7 +27,6 @@ header {
 
 main {
     display: flex;
-    flex-wrap: wrap;
     padding: 1.5em 2em;
     box-sizing: border-box;
 }
@@ -41,6 +40,32 @@ h1 {
 h2 {
     font-weight: 800;
     margin: 1.5em 0 1em;
+}
+
+.switch-theme {
+    display: flex;
+    align-items: center;
+}
+
+.switch-theme:hover {
+    cursor: pointer;
+}
+
+.switch-theme p {
+    font-weight: 600;
+    margin-left: 0.3em;
+    color: var(--headerTextColor);
+}
+
+#switch-theme {
+    visibility: hidden;
+}
+
+.main-page {
+    visibility: /*visible*/ hidden;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .search-container {
@@ -111,25 +136,6 @@ h2 {
     margin: 0.2em 0;
 }
 
-.switch-theme {
-    display: flex;
-    align-items: center;
-}
-
-.switch-theme:hover {
-    cursor: pointer;
-}
-
-.switch-theme p {
-    font-weight: 600;
-    margin-left: 0.3em;
-    color: var(--headerTextColor);
-}
-
-#switch-theme {
-    visibility: hidden;
-}
-
 .countries-container {
     display: flex;
     justify-content: center;
@@ -173,4 +179,47 @@ h2 {
 
 .info-country-container strong {
     font-weight: 300;
+}
+
+.detail-page {
+    visibility: visible /*hidden*/;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    padding: 1.5em 2em;
+    box-sizing: border-box;
+}
+
+.btn-back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--principalFont);
+    font-weight: 600;
+    height: 2em;
+    width: 9em;
+    border: none;
+    border-radius: 3px;
+    background-color: var(--whiteColor);
+    box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+}
+
+.img-btn-back {
+    margin-right: 0.5em;
+}
+
+.detail-container {
+    display: flex;
+    height: 20em;
+    width: 20em;
+    margin-top: 3em;
+    background-color: blue;
+}
+
+.flag-container {
+    height: 5em;
+    width: 5em;
+    background-color: red;
 }
