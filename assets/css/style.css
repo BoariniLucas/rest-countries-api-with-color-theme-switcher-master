@@ -42,6 +42,11 @@ h2 {
     margin: 1.5em 0 1em;
 }
 
+h3 {
+    font-size: 1.8em;
+    font-weight: 800;
+}
+
 .switch-theme {
     display: flex;
     align-items: center;
@@ -62,8 +67,7 @@ h2 {
 }
 
 .main-page {
-    visibility: /*visible*/ hidden;
-    display: flex;
+    display: /*flex*/ none;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -159,7 +163,7 @@ h2 {
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background: url(https://flagcdn.com/de.svg) no-repeat;
+    background: url(https://flagcdn.com/be.svg) no-repeat;/*https://flagcdn.com/de.svg*/ 
     background-size: cover;
     background-position: center;
     
@@ -182,14 +186,10 @@ h2 {
 }
 
 .detail-page {
-    visibility: visible /*hidden*/;
-    display: flex;
+    display: /*none*/ flex;
     flex-direction: column;
-    position: absolute;
-    right: 0;
     width: 100%;
-    padding: 1.5em 2em;
-    box-sizing: border-box;
+    padding: 0 3.5em;
 }
 
 .btn-back {
@@ -202,8 +202,13 @@ h2 {
     width: 9em;
     border: none;
     border-radius: 3px;
+    margin-top: 2em;
     background-color: var(--whiteColor);
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+}
+
+.btn-back:hover {
+    cursor: pointer;
 }
 
 .img-btn-back {
@@ -212,14 +217,56 @@ h2 {
 
 .detail-container {
     display: flex;
+    justify-content: space-between;
     height: 20em;
-    width: 20em;
+    width: 100%;
     margin-top: 3em;
-    background-color: blue;
 }
 
 .flag-container {
-    height: 5em;
-    width: 5em;
-    background-color: red;
+    height: 20em;
+    width: 32em;
+}
+
+.detail-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15em;
+    width: 36em;
+    margin-top: 2.5em;
+}
+
+.detail-info p {
+    font-size: 0.9em;
+    font-weight: 800;
+    margin: 0.7em 0;
+}
+
+.detail-info strong {
+    font-weight: 600;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -1em;
+}
+
+.border-contries-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.border-contries-container p {
+    margin-right: 0.8em;
+}
+
+.border-contries-container div {
+    font-size: 0.9em;
+    padding: 0.4em 0.8em;
+    margin-right: 0.5em;
+    background-color: var(--whiteColor);
+    box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
 }

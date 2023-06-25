@@ -21,9 +21,12 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Header: Criar função para mudar thema;
 - [X] Estruturar estilo css do container de pesquisa e filtro;
 - [X] Container Filtro: Criar lista dropdown;
-- [X] Estruturar estilo css para informações dos países (página principal);
+- [X] Estilização do css info. dos países (página principal);
+- [X] Estilização do css info. dos países (página detalhes);
+- [ ] Finalizar função de troca de thema;
+- [ ] Criar funções de navegação entre páginas;
+- [ ] Deixar projeto responsivo;
 - [ ] Criar função para buscar todas informações da API e exibir na página principal;
-- [ ] Estruturar estilo css para informações dos países (página detalhes);
 - [ ] Criar função para buscar informações da API na página detalhes;
 - [ ] Desenvolver método de busca página principal;
 - [ ] Criar função de filtro página principal;
