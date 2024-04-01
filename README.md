@@ -23,7 +23,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Container Filtro: Criar lista dropdown;
 - [X] Estilização do css info. dos países (página principal);
 - [X] Estilização do css info. dos países (página detalhes);
-- [ ] Finalizar função de troca de thema;
+- [X] Finalizar função de troca de thema;
 - [ ] Criar funções de navegação entre páginas;
 - [ ] Deixar projeto responsivo;
 - [ ] Criar função para buscar todas informações da API e exibir na página principal;

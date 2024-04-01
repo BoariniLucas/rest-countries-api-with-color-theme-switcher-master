@@ -1,16 +1,19 @@
 :root {
     --principalFont: 'Nunito Sans', sans-serif;
     --whiteColor: #fff;
+    --fontColor: #000000;
     --bgColor: #fafafa;
     --headerBgColor: #fff;
     --headerTextColor: #000000;
     --headerDivisorColor: #efefef;
-    --shadowBoxColor: #e6e0e0;    
+    --shadowBoxColor: #e6e0e0;
+    --btnBgColor: #fff;
 }
 
 body {
     font-family: var(--principalFont);
     font-size: 16px;
+    color: var(--fontColor);
     background-color: var(--bgColor);
 }
 
@@ -67,7 +70,7 @@ h3 {
 }
 
 .main-page {
-    display: /*flex*/ none;
+    display: /*flex*/none ;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -203,7 +206,8 @@ h3 {
     border: none;
     border-radius: 3px;
     margin-top: 2em;
-    background-color: var(--whiteColor);
+    color: var(--fontColor);
+    background-color: var(--btnBgColor);
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
 }
 
@@ -267,6 +271,6 @@ h3 {
     font-size: 0.9em;
     padding: 0.4em 0.8em;
     margin-right: 0.5em;
-    background-color: var(--whiteColor);
+    background-color: var(--borderContriesBgColor);
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
 }
