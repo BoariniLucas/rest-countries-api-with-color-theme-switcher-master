@@ -35,7 +35,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 
 <!--Abaixo estou deixando um screenshot do design final do projeto conforme desenvolvi:-->
 
-<!--![Imagem do meu resultado do projeto](./design/my-solution.jpg)-->
+<!--![Imagem do meu resultado do projeto](./design/my-solution.jpg)  teste-->
 
 ### Link
 
