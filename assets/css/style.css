@@ -70,7 +70,7 @@ h3 {
 }
 
 .main-page {
-    display: /*flex*/none ;
+    display: /*none*/flex ;
     flex-wrap: wrap;
     width: 100%;
 }
@@ -189,7 +189,7 @@ h3 {
 }
 
 .detail-page {
-    display: /*none*/ flex;
+    display: /*flex*/ none;
     flex-direction: column;
     width: 100%;
     padding: 0 3.5em;

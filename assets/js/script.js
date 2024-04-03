@@ -2,9 +2,28 @@ const switchTheme = document.querySelector('#switch-theme');
 const btnImgTheme = document.querySelector('#btn-img-theme');
 const btnImgBack = document.querySelector('#id-img-btn-back');
 const btnDrop = document.querySelector('#dropbtn');
-
+const baseURL = 'https://restcountries.com/v3.1/';
 
 let theme = 1;
+
+async function catchAllCountries() {
+    try {
+        const response = await fetch(baseURL + 'all?fields=name,flags,population,region', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
+catchAllCountries().then(function(response) {
+    console.log(response)
+});
 
 switchTheme.addEventListener('change', () => {
     

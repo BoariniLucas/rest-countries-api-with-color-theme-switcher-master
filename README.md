@@ -24,10 +24,10 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Estilização do css info. dos países (página principal);
 - [X] Estilização do css info. dos países (página detalhes);
 - [X] Finalizar função de troca de thema;
+- [X] Conectar projeto a API;
 - [ ] Criar funções de navegação entre páginas;
 - [ ] Deixar projeto responsivo;
 - [ ] Criar função para buscar todas informações da API e exibir na página principal;
-- [ ] Criar função para buscar informações da API na página detalhes;
 - [ ] Desenvolver método de busca página principal;
 - [ ] Criar função de filtro página principal;
 
