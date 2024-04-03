@@ -2,13 +2,14 @@ const switchTheme = document.querySelector('#switch-theme');
 const btnImgTheme = document.querySelector('#btn-img-theme');
 const btnImgBack = document.querySelector('#id-img-btn-back');
 const btnDrop = document.querySelector('#dropbtn');
+const content = document.querySelector('#content');
 const baseURL = 'https://restcountries.com/v3.1/';
 
 let theme = 1;
 
 async function catchAllCountries() {
     try {
-        const response = await fetch(baseURL + 'all?fields=name,flags,population,region', {
+        const response = await fetch(baseURL + 'all?fields=name,flags,population,region,capital', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -20,10 +21,6 @@ async function catchAllCountries() {
         throw error;
     }
 }
-
-catchAllCountries().then(function(response) {
-    console.log(response)
-});
 
 switchTheme.addEventListener('change', () => {
     
@@ -76,4 +73,25 @@ btnDrop.addEventListener('click', () => {
 
         dropdown.style.visibility = "hidden"
     }
+});
+
+catchAllCountries().then(function(response) {
+    response.forEach(country => {
+
+        console.log(country);
+
+        const countryCard = document.createElement('div');
+            countryCard.innerHTML = `
+                <img class="flag" src="${country.flags.png}">
+                    
+                <div class="info-country-card">
+                    <h2 class="country-name">${country.name.common}</h2>
+                    <p>Population: <strong>${country.population}</strong></p>
+                    <p>Region: <strong>${country.region}</strong></p>
+                    <p>Capital: <strong>${country.capital}</strong></p>
+                </div>
+            `;
+            countryCard.classList.add("country-card");
+            content.appendChild(countryCard);            
+    });
 });

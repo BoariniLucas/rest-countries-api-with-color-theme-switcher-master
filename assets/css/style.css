@@ -151,7 +151,7 @@ h3 {
     margin-top: 1.5em;
 }
 
-.country-container {
+.country-card {
     height: 20em;
     width: 16em;
     margin: 0.5em 1.8em;
@@ -166,25 +166,24 @@ h3 {
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    background: url(https://flagcdn.com/be.svg) no-repeat;/*https://flagcdn.com/de.svg*/ 
     background-size: cover;
     background-position: center;
     
 }
 
-.info-country-container {
+.info-country-card {
     padding: 0 1em;
     box-sizing: border-box;
     background-color: #fff;
 }
 
-.info-country-container p {
+.info-country-card p {
     font-size: 0.9em;
     font-weight: 600;
     margin: 0.5em 0;
 }
 
-.info-country-container strong {
+.info-country-card strong {
     font-weight: 300;
 }
 
