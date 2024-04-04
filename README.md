@@ -26,9 +26,9 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Finalizar função de troca de thema;
 - [X] Conectar projeto a API;
 - [X] Exibindo todos os países na página inicial;
+- [X] Criar funções de navegação entre páginas;
 - [ ] Desenvolver método de busca página principal;
 - [ ] Criar função de filtro página principal;
-- [ ] Criar funções de navegação entre páginas;
 - [ ] Deixar projeto responsivo;
 
 ### Screenshot

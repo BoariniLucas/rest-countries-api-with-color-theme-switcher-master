@@ -1,6 +1,6 @@
 :root {
     --principalFont: 'Nunito Sans', sans-serif;
-    --whiteColor: #fff;
+    --bgColorElements: #fff;
     --fontColor: #000000;
     --bgColor: #fafafa;
     --headerBgColor: #fff;
@@ -8,6 +8,7 @@
     --headerDivisorColor: #efefef;
     --shadowBoxColor: #e6e0e0;
     --btnBgColor: #fff;
+    --searchImage: url(../images/search-outline.svg);
 }
 
 body {
@@ -70,6 +71,9 @@ h3 {
 }
 
 .main-page {
+
+
+
     display: /*none*/flex ;
     flex-wrap: wrap;
     width: 100%;
@@ -91,10 +95,10 @@ h3 {
     padding: 0 3em;
     box-sizing: border-box;
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
-    background: url(../images/search-outline.svg) no-repeat;
+    background: var(--searchImage) no-repeat;
     background-size: 1.5em;
     background-position: 1em;
-    background-color: var(--whiteColor);
+    background-color: var(--bgColorElements);
 }
 
 .dropbtn {
@@ -107,7 +111,7 @@ h3 {
     padding: 0 0.5em;
     box-sizing: border-box;
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
-    background-color: var(--whiteColor);
+    background-color: var(--bgColorElements);
 }
 
 .dropbtn:hover {
@@ -135,7 +139,7 @@ h3 {
     box-sizing: border-box;
     border-radius: 3px;
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
-    background-color: var(--whiteColor);
+    background-color: var(--bgColorElements);
 }
 
 .dropdown a {
@@ -157,8 +161,12 @@ h3 {
     margin: 0.5em 1.8em;
     margin-top: 1;
     border-radius: 5px;
-    background-color: var(--whiteColor);
+    background-color: var(--bgColorElements);
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+}
+
+.country-card:hover {
+    cursor: pointer;
 }
 
 .flag {
@@ -175,6 +183,7 @@ h3 {
     padding: 0 1em;
     box-sizing: border-box;
     background-color: #fff;
+    background-color: var(--bgColorElements);
 }
 
 .info-country-card p {
@@ -188,7 +197,10 @@ h3 {
 }
 
 .detail-page {
-    display: /*flex*/ none;
+
+
+
+    display: /*flex*/ none;    
     flex-direction: column;
     width: 100%;
     padding: 0 3.5em;
@@ -228,7 +240,7 @@ h3 {
 
 .flag-container {
     height: 20em;
-    width: 32em;
+    width: 30em;
 }
 
 .detail-info {
