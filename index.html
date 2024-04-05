@@ -29,7 +29,7 @@
         <main>
             <section class="main-page" id="mainPage">
                 <div class="search-container">
-                    <input type="text" class="search-country" placeholder="Search for a country...">
+                    <input type="search" class="search-country" id="searchCountry" placeholder="Search for a country...">
     
                     <div class="dropbtn" id="dropbtn">
                         <p>Filter by Region</p>
@@ -55,23 +55,23 @@
                 </button>
 
                 <div id='contentDetail' class="detail-container">
-                 <!--   <div class="flag-container flag"></div>
+                    <img id="detailFlag" class="flag-container flag" src="">
                     <div class="detail-info">
-                        <h3>Belgium</h3>
+                        <h3 id="countryNameCommon"></h3>
 
                         <div class="info-container">
                             <div>
-                                <p>Native Name: <strong>België</strong></p>
-                                <p>Population: <strong>11.319.511</strong></p>
-                                <p>Region: <strong>Europe</strong></p>
-                                <p>Sub Region: <strong>Western Europe</strong></p>
-                                <p>Capital: <strong>Brussels</strong></p> 
+                                <p>Native Name: <strong id="nativeName"></strong></p>
+                                <p>Population: <strong id="population"></strong></p>
+                                <p>Region: <strong id="countryRegion"></strong></p>
+                                <p>Sub Region: <strong id="subRegion"></strong></p>
+                                <p>Capital: <strong id="capital"></strong></p> 
                             </div>
 
                             <div>
-                                <p>Top Level Domain: <strong>.be</strong></p>
-                                <p>Currencies: <strong>Euro</strong></p>
-                                <p>Languages: <strong>Dutch,French, German</strong></p>
+                                <p>Top Level Domain: <strong id="tld"></strong></p>
+                                <p>Currencies: <strong id="currencies"></strong></p>
+                                <p>Languages: <strong id="languages"></strong></p>
                             </div>
                         </div>
 
@@ -83,7 +83,7 @@
                             <div>Netherlands</div>
                         </div>
                         
-                    </div>    -->
+                    </div>
                 </div>
 
             </section>

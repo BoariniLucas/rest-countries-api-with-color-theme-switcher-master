@@ -6,6 +6,7 @@ const btnDrop = document.querySelector('#dropbtn');
 const content = document.querySelector('#content');
 const contentDetail = document.querySelector('#contentDetail');
 const baseURL = 'https://restcountries.com/v3.1/';
+const searchCountry = document.querySelector('#searchCountry');
 
 
 const detailPage = document.querySelector('#detailPage');
@@ -16,7 +17,7 @@ let theme = 1;
 
 async function catchAllCountries() {
     try {
-        const response = await fetch(baseURL + 'all?fields=name,flags,population,region,capital', {
+        const response = await fetch(baseURL + 'all?fields=name,flags,population,region,capital,subregion,currencies,languages,tld', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -119,43 +120,42 @@ function detailsCountry(country){
     mainPage.style.display = "none";
     detailPage.style.display = "flex";
 
-    const countryDetails = document.createElement('div');
-        countryDetails.innerHTML = `
+    const detailFlag = document.querySelector('#detailFlag');
+    const countryNameCommon = document.querySelector('#countryNameCommon');
+    const nativeName = document.querySelector('#nativeName');
+    const population = document.querySelector('#population');
+    const countryRegion = document.querySelector('#countryRegion');
+    const subRegion = document.querySelector('#subRegion');
+    const capital = document.querySelector('#capital');
 
-            <img class="flag-container flag" src="${country.flags.png}">
-            <div class="detail-info">
-                <h3>${country.name.common}</h3>
+    const tld = document.querySelector('#tld');
+    const currencies = document.querySelector('#currencies');
+    const languages = document.querySelector('#languages');
 
-                <div class="info-container">
-                    <div>
-                        <p>Native Name: <strong>België</strong></p>
-                        <p>Population: <strong>11.319.511</strong></p>
-                        <p>Region: <strong>Europe</strong></p>
-                        <p>Sub Region: <strong>Western Europe</strong></p>
-                        <p>Capital: <strong>Brussels</strong></p> 
-                    </div>
+    detailFlag.src = country.flags.png;
+    countryNameCommon.innerHTML = country.name.common;
+    nativeName.innerHTML = country.name.official;
+    population.innerHTML = country.population;
+    countryRegion.innerHTML = country.region;
+    subRegion.innerHTML = country.subregion;
+    capital.innerHTML = country.capital;
 
-                    <div>
-                        <p>Top Level Domain: <strong>.be</strong></p>
-                        <p>Currencies: <strong>Euro</strong></p>
-                        <p>Languages: <strong>Dutch,French, German</strong></p>
-                    </div>
-                </div>
+    tld.innerHTML = country.tld;
+    currencies.innerHTML = country.currencies;
+    languages.innerHTML = country.languages;
 
-                <div class="border-contries-container">
-                    <p>Border Countries:</p>
-
-                    <div>France</div>
-                    <div>Germany</div>
-                    <div>Netherlands</div>
-                </div>
-                
-            </div>
-        `
-    countryDetails.classList.add("detail-container");    
-    contentDetail.appendChild(countryDetails); 
-
-    console.log(country.name.common);   
+    console.log(country);   
 
 }
 
+searchCountry.addEventListener('input', () => {
+    const countriesList = document.querySelectorAll('.country-name');
+
+    countriesList.forEach(country => {
+        if(!country.textContent.toLocaleLowerCase().includes(searchCountry.value.toLocaleLowerCase())){
+            country.parentNode.parentNode.style.display = 'none';
+        } else {
+            country.parentNode.parentNode.style.display = 'block';
+        }
+    });
+});
