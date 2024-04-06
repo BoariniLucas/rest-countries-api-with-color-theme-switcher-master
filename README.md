@@ -23,13 +23,17 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Container Filtro: Criar lista dropdown;
 - [X] Estilização do css info. dos países (página principal);
 - [X] Estilização do css info. dos países (página detalhes);
-- [X] Finalizar função de troca de thema;
+- [X] Finalizar função de troca de tema;
 - [X] Conectar projeto a API;
 - [X] Exibindo todos os países na página inicial;
 - [X] Criar funções de navegação entre páginas;
-- [ ] Desenvolver método de busca página principal;
-- [ ] Criar função de filtro página principal;
-- [ ] Deixar projeto responsivo;
+- [X] Desenvolver método de busca página principal;
+
+- [X] Criar páginas para detalhes dos países;
+- [ ] Abrir página de detalhes ao clicar no card do país;
+- [ ] Realizar a consulta na API com os detalhes do país selecionado;
+- [ ] Exibir dados na página de detalhes do país;
+- [ ] Criar função de filtro por região na página principal;
 
 ### Screenshot
 
@@ -42,6 +46,10 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 <!--Estou deixando abaixo o link com o deploy do projeto para visualização direto no navegador:-->
 
 <!--- Para acessar o formulário clique [aqui](https://multi-step-form-dusky-gamma.vercel.app/)-->
+
+<!--### Aprendizados
+
+Durande o desenvolvimento dessa aplicação aprendi uma melhor maneira de como estruturar as páginas do site, então realizarei uma refatoração dos códigos para deixar melhor estruturado. Com isso aprendi mais sobre o sistema de navegação do JavaScript.-->
 
 ### Construido com
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap" rel="stylesheet">
+
+        <title>REST Countries API</title>
+
+    </head>
+    <body>
+        <header>
+            <h1>Where in the world?</h1>
+
+            <input type="checkbox" id="switch-theme">
+            <label for="switch-theme" class="switch-theme">  
+                <img id="btn-img-theme" src="./assets/images/moon.svg" height="18" width="18">
+                <p>Dark Mode</p>
+            </label>
+            
+        </header>
+
+        <main>
+           <section class="detail-page" id="detailPage">
+                <button class="btn-back" id="btnBack">
+                    <img id="id-img-btn-back" class="img-btn-back" src="./assets/images/arrow-back.svg" height="20px" width="20px">
+                    Back
+                </button>
+
+                <div id='contentDetail' class="detail-container">
+                    <img id="detailFlag" class="flag-container flag" src="">
+                    <div class="detail-info">
+                        <h3 id="countryNameCommon"></h3>
+
+                        <div class="info-container">
+                            <div>
+                                <p>Native Name: <strong id="nativeName"></strong></p>
+                                <p>Population: <strong id="population"></strong></p>
+                                <p>Region: <strong id="countryRegion"></strong></p>
+                                <p>Sub Region: <strong id="subRegion"></strong></p>
+                                <p>Capital: <strong id="capital"></strong></p> 
+                            </div>
+
+                            <div>
+                                <p>Top Level Domain: <strong id="tld"></strong></p>
+                                <p>Currencies: <strong id="currencies"></strong></p>
+                                <p>Languages: <strong id="languages"></strong></p>
+                            </div>
+                        </div>
+
+                        <div class="border-contries-container">
+                            <p>Border Countries:</p>
+
+                            <div>France</div>
+                            <div>Germany</div>
+                            <div>Netherlands</div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </section>
+            
+        </main>        
+        <script src="./assets/js/index.js"></script>
+    </body>
+</html>
