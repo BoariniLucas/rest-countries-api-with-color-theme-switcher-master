@@ -30,7 +30,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Desenvolver método de busca página principal;
 
 - [X] Criar páginas para detalhes dos países;
-- [ ] Abrir página de detalhes ao clicar no card do país;
+- [X] Abrir página de detalhes ao clicar no card do país;
 - [ ] Realizar a consulta na API com os detalhes do país selecionado;
 - [ ] Exibir dados na página de detalhes do país;
 - [ ] Criar função de filtro por região na página principal;

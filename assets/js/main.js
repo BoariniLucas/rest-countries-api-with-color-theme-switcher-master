@@ -1,23 +1,18 @@
 const switchTheme = document.querySelector('#switch-theme');
 const btnImgTheme = document.querySelector('#btn-img-theme');
 const btnImgBack = document.querySelector('#id-img-btn-back');
-const btnBack = document.querySelector('#btnBack');
 const btnDrop = document.querySelector('#dropbtn');
 const content = document.querySelector('#content');
 const contentDetail = document.querySelector('#contentDetail');
 const baseURL = 'https://restcountries.com/v3.1/';
 const searchCountry = document.querySelector('#searchCountry');
 
-
-const detailPage = document.querySelector('#detailPage');
-const mainPage = document.querySelector('#mainPage');
-
-
 let theme = 1;
+
 
 async function catchAllCountries() {
     try {
-        const response = await fetch(baseURL + 'all?fields=name,flags,population,region,capital,subregion,currencies,languages,tld', {
+        const response = await fetch(baseURL + 'all?fields=name,flags,population,region,capital', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -30,7 +25,40 @@ async function catchAllCountries() {
     }
 }
 
-switchTheme.addEventListener('change', () => {
+catchAllCountries().then(function(response) {
+    response.forEach(country => {
+
+        const countryCard = document.createElement('div');
+            countryCard.innerHTML = `
+            <a href="country.html?country=${country.name.common}">
+                <img class="flag" src="${country.flags.png}">
+                    
+                <div class="info-country-card">
+                    <h2 class="country-name">${country.name.common}</h2>
+                    <p>Population: <strong>${country.population}</strong></p>
+                    <p>Region: <strong>${country.region}</strong></p>
+                    <p>Capital: <strong>${country.capital}</strong></p>
+                </div>
+            </a>
+            `;
+        countryCard.classList.add("country-card");
+        content.appendChild(countryCard); 
+    });
+});
+
+searchCountry.addEventListener('input', () => {
+    const countriesList = document.querySelectorAll('.country-name');
+
+    countriesList.forEach(country => {
+        if(!country.textContent.toLocaleLowerCase().includes(searchCountry.value.toLocaleLowerCase())){
+            country.parentNode.parentNode.parentNode.style.display = 'none';
+        } else {
+            country.parentNode.parentNode.parentNode.style.display = 'block';
+        }
+    });
+});
+
+/*switchTheme.addEventListener('change', () => {
     
     if(theme == 1) {
 
@@ -69,7 +97,7 @@ switchTheme.addEventListener('change', () => {
         theme = 1;
     }
 
-});
+});*/
 
 btnDrop.addEventListener('click', () => {
     const dropdown = document.querySelector('#dropdown');
@@ -87,36 +115,7 @@ btnDrop.addEventListener('click', () => {
     }
 });
 
-btnBack.addEventListener('click', () => {
-    mainPage.style.display = "flex";
-    detailPage.style.display = "none";
-});
-
-catchAllCountries().then(function(response) {
-    response.forEach(country => {
-
-        const countryCard = document.createElement('div');
-            countryCard.innerHTML = `
-                <img class="flag" src="${country.flags.png}">
-                    
-                <div class="info-country-card">
-                    <h2 class="country-name">${country.name.common}</h2>
-                    <p>Population: <strong>${country.population}</strong></p>
-                    <p>Region: <strong>${country.region}</strong></p>
-                    <p>Capital: <strong>${country.capital}</strong></p>
-                </div>
-            `;
-        countryCard.classList.add("country-card");
-        content.appendChild(countryCard); 
-
-        
-        countryCard.addEventListener('click', () => {
-            detailsCountry(country);           
-        });
-    });
-});
-
-function detailsCountry(country){
+/*function detailsCountry(country){
     mainPage.style.display = "none";
     detailPage.style.display = "flex";
 
@@ -146,16 +145,5 @@ function detailsCountry(country){
 
     console.log(country);   
 
-}
+}*/
 
-searchCountry.addEventListener('input', () => {
-    const countriesList = document.querySelectorAll('.country-name');
-
-    countriesList.forEach(country => {
-        if(!country.textContent.toLocaleLowerCase().includes(searchCountry.value.toLocaleLowerCase())){
-            country.parentNode.parentNode.style.display = 'none';
-        } else {
-            country.parentNode.parentNode.style.display = 'block';
-        }
-    });
-});

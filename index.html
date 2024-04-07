@@ -26,69 +26,25 @@
             
         </header>
 
-        <main>
-            <section class="main-page" id="mainPage">
-                <div class="search-container">
-                    <input type="search" class="search-country" id="searchCountry" placeholder="Search for a country...">
-    
-                    <div class="dropbtn" id="dropbtn">
-                        <p>Filter by Region</p>
-                        <img src="./assets/images/chevron-down.svg" height="18" width="18">
-                    </div>
-                    <div class="dropdown hidden" id="dropdown">
-                        <a>Africa</a>
-                        <a>America</a>
-                        <a>Asia</a>
-                        <a>Europe</a>
-                        <a>Oceania</a>
-                    </div>                
+        <main id="content" class="main-page" id="mainPage">
+            <nav class="search-container">
+                <input type="search" class="search-country" id="searchCountry" placeholder="Search for a country...">
+
+                <div class="dropbtn" id="dropbtn">
+                    <p>Filter by Region</p>
+                    <img src="./assets/images/chevron-down.svg" height="18" width="18">
                 </div>
-    
-                <div id="content" class="countries-container">
-                </div>
-            </section>
+                <div class="dropdown hidden" id="dropdown">
+                    <a>Africa</a>
+                    <a>America</a>
+                    <a>Asia</a>
+                    <a>Europe</a>
+                    <a>Oceania</a>
+                </div>                
+            </nav>
 
-            <section class="detail-page" id="detailPage">
-                <button class="btn-back" id="btnBack">
-                    <img id="id-img-btn-back" class="img-btn-back" src="./assets/images/arrow-back.svg" height="20px" width="20px">
-                    Back
-                </button>
-
-                <div id='contentDetail' class="detail-container">
-                    <img id="detailFlag" class="flag-container flag" src="">
-                    <div class="detail-info">
-                        <h3 id="countryNameCommon"></h3>
-
-                        <div class="info-container">
-                            <div>
-                                <p>Native Name: <strong id="nativeName"></strong></p>
-                                <p>Population: <strong id="population"></strong></p>
-                                <p>Region: <strong id="countryRegion"></strong></p>
-                                <p>Sub Region: <strong id="subRegion"></strong></p>
-                                <p>Capital: <strong id="capital"></strong></p> 
-                            </div>
-
-                            <div>
-                                <p>Top Level Domain: <strong id="tld"></strong></p>
-                                <p>Currencies: <strong id="currencies"></strong></p>
-                                <p>Languages: <strong id="languages"></strong></p>
-                            </div>
-                        </div>
-
-                        <div class="border-contries-container">
-                            <p>Border Countries:</p>
-
-                            <div>France</div>
-                            <div>Germany</div>
-                            <div>Netherlands</div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-            </section>
-            
+            <div  class="countries-container"></div>            
         </main>        
-        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/main.js"></script>
     </body>
 </html>
