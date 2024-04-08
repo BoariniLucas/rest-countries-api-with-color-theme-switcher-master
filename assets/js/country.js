@@ -2,9 +2,16 @@ const loc = document.location;
 const baseURL = 'https://restcountries.com/v3.1/';
 const nameCountry = loc.search.split('=')[1];
 
-
-console.log(loc.search);
-console.log(loc.search.split('=')[1]);
+const detailFlag = document.querySelector('#detailFlag');
+const countryNameCommon = document.querySelector('#countryNameCommon');
+const nativeName = document.querySelector('#nativeName');
+const population = document.querySelector('#population');
+const countryRegion = document.querySelector('#countryRegion');
+const subRegion = document.querySelector('#subRegion');
+const capital = document.querySelector('#capital');
+const tld = document.querySelector('#tld');
+const currencies = document.querySelector('#currencies');
+const languagesCountry = document.querySelector('#languagesCountry');
 
 
 async function catchCountry() {
@@ -23,5 +30,29 @@ async function catchCountry() {
 }
 
 catchCountry().then(function(response) {
+
+    const currenciesArr = Object.keys(response[0].currencies);
+    const languagesArr = Object.keys(response[0].languages);
+
+    const currenciCountry = currenciesArr[0];
+
+
+   /* for (let i = 0; i < languagesArr.length; i++) {
+        const countryLanguage = languagesArr[i];
+        languagesCountry.innerHTML = response[0].languages[countryLanguage];
+    }
+*/    
     console.log(response);
-});
+    detailFlag.src = response[0].flags.png;
+    countryNameCommon.innerHTML = response[0].name.common;
+    nativeName.innerHTML = response[0].name.official;
+    population.innerHTML = response[0].population;
+    countryRegion.innerHTML = response[0].region;
+    subRegion.innerHTML = response[0].subregion;
+    capital.innerHTML = response[0].capital[0];
+    tld.innerHTML = response[0].tld[0];
+    currencies.innerHTML = response[0].currencies[currenciCountry].name;    
+
+    console.log(response[0].languages);
+    console.log(response[0].borders);
+}); 
