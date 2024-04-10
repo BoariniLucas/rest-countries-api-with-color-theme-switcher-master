@@ -32,8 +32,8 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Criar páginas para detalhes dos países;
 - [X] Abrir página de detalhes ao clicar no card do país;
 - [X] Realizar a consulta na API com os detalhes do país selecionado;
-- [ ] Criar função para tratar os dados recebido da API;
-- [ ] Função para exibir todas as líguas do país;
+- [X] Criar função para tratar os dados recebido da API;
+- [X] Função para exibir todas as líguas do país;
 - [ ] Função para gerar países de fronteira;
 - [ ] Exibir dados na página de detalhes do país;
 - [ ] Criar função de filtro por região na página principal;

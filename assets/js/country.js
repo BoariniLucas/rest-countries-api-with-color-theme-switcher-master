@@ -11,7 +11,7 @@ const subRegion = document.querySelector('#subRegion');
 const capital = document.querySelector('#capital');
 const tld = document.querySelector('#tld');
 const currencies = document.querySelector('#currencies');
-const languagesCountry = document.querySelector('#languagesCountry');
+const languagesCountry = document.querySelector('#languages');
 
 
 async function catchCountry() {
@@ -30,18 +30,11 @@ async function catchCountry() {
 }
 
 catchCountry().then(function(response) {
-
     const currenciesArr = Object.keys(response[0].currencies);
     const languagesArr = Object.keys(response[0].languages);
 
     const currenciCountry = currenciesArr[0];
-
-
-   /* for (let i = 0; i < languagesArr.length; i++) {
-        const countryLanguage = languagesArr[i];
-        languagesCountry.innerHTML = response[0].languages[countryLanguage];
-    }
-*/    
+    
     console.log(response);
     detailFlag.src = response[0].flags.png;
     countryNameCommon.innerHTML = response[0].name.common;
@@ -53,6 +46,16 @@ catchCountry().then(function(response) {
     tld.innerHTML = response[0].tld[0];
     currencies.innerHTML = response[0].currencies[currenciCountry].name;    
 
-    console.log(response[0].languages);
+    for (let i = 0; i < languagesArr.length; i++) {
+        const countryLanguage = languagesArr[i];
+        const counter = languagesArr.length;
+        
+        languagesCountry.innerHTML += response[0].languages[countryLanguage];        
+
+        if(i != (counter-1)){
+            languagesCountry.innerHTML += ", ";
+        }        
+    }  
+  
     console.log(response[0].borders);
 }); 
