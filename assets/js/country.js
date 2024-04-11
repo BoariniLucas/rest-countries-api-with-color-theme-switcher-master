@@ -13,6 +13,7 @@ const tld = document.querySelector('#tld');
 const currencies = document.querySelector('#currencies');
 const languagesCountry = document.querySelector('#languages');
 
+let countryAcronym;
 
 async function catchCountry() {
     try {
@@ -29,9 +30,25 @@ async function catchCountry() {
     }
 }
 
+async function catchCountryName() {
+    try {
+        const response = await fetch(baseURL + `alpha/${countryAcronym}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 catchCountry().then(function(response) {
     const currenciesArr = Object.keys(response[0].currencies);
     const languagesArr = Object.keys(response[0].languages);
+    const bordersCountry = response[0].borders;
 
     const currenciCountry = currenciesArr[0];
     
@@ -56,6 +73,20 @@ catchCountry().then(function(response) {
             languagesCountry.innerHTML += ", ";
         }        
     }  
-  
-    console.log(response[0].borders);
+
+    for (let i = 0; i < bordersCountry.length; i++) {
+        
+        if(bordersCountry == undefined){
+            console.log("Sem border");
+        }
+        
+        console.log(bordersCountry[i]);
+
+        countryAcronym = bordersCountry[i];
+
+        
+        catchCountryName().then(function(countryAcronym){
+            console.log(countryAcronym[0].name.common);
+        });                
+    }
 }); 
