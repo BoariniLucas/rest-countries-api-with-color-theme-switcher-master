@@ -35,8 +35,9 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Criar função para tratar os dados recebido da API;
 - [X] Função para exibir todas as líguas do país;
 - [X] Relizar consulta na API para gerar países de fronteira;
-- [ ] Função para exibição dos países de fronteira;
-- [ ] Exibir dados na página de detalhes do país;
+- [X] Função para exibição dos países de fronteira;
+- [X] Botão voltar para tela inicial;
+- [ ] Tornar países de fronteira clicável;
 - [ ] Criar função de filtro por região na página principal;
 
 ### Screenshot

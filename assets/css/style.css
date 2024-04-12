@@ -211,6 +211,7 @@ h3 {
     color: var(--fontColor);
     background-color: var(--btnBgColor);
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+    text-decoration: none;
 }
 
 .btn-back:hover {
