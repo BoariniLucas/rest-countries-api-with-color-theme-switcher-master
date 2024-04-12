@@ -12,6 +12,7 @@ const capital = document.querySelector('#capital');
 const tld = document.querySelector('#tld');
 const currencies = document.querySelector('#currencies');
 const languagesCountry = document.querySelector('#languages');
+const borderContriesContainer = document.querySelector('#border-contries-container');
 
 let countryAcronym;
 
@@ -74,19 +75,23 @@ catchCountry().then(function(response) {
         }        
     }  
 
-    for (let i = 0; i < bordersCountry.length; i++) {
-        
-        if(bordersCountry == undefined){
-            console.log("Sem border");
+    if(bordersCountry == undefined){
+        const borderCountry = document.createElement('div');
+        borderCountry.innerHTML = `No border countries`
+        borderContriesContainer.appendChild(borderCountry);
+
+    } else {        
+        for (let i = 0; i < 3; i++) {
+            
+            countryAcronym = bordersCountry[i];    
+            
+            catchCountryName().then(function(countryAcronym){
+                console.log(countryAcronym[0].name.common);
+
+                const borderCountry = document.createElement('div');
+                borderCountry.innerHTML = `${countryAcronym[0].name.common}`;    
+                borderContriesContainer.appendChild(borderCountry);
+            });
         }
-        
-        console.log(bordersCountry[i]);
-
-        countryAcronym = bordersCountry[i];
-
-        
-        catchCountryName().then(function(countryAcronym){
-            console.log(countryAcronym[0].name.common);
-        });                
     }
 }); 
