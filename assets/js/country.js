@@ -89,7 +89,11 @@ catchCountry().then(function(response) {
                 console.log(countryAcronym[0].name.common);
 
                 const borderCountry = document.createElement('div');
-                borderCountry.innerHTML = `${countryAcronym[0].name.common}`;    
+                borderCountry.innerHTML = `
+                    <a href="country.html?country=${countryAcronym[0].name.common}">
+                        ${countryAcronym[0].name.common}
+                    </a>
+                `;    
                 borderContriesContainer.appendChild(borderCountry);
             });
         }

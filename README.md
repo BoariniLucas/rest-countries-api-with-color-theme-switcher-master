@@ -37,7 +37,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Relizar consulta na API para gerar países de fronteira;
 - [X] Função para exibição dos países de fronteira;
 - [X] Botão voltar para tela inicial;
-- [ ] Tornar países de fronteira clicável;
+- [X] Tornar países de fronteira clicável;
 - [ ] Criar função de filtro por região na página principal;
 
 ### Screenshot
