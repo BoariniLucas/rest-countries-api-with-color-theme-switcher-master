@@ -53,7 +53,6 @@ catchCountry().then(function(response) {
 
     const currenciCountry = currenciesArr[0];
     
-    console.log(response);
     detailFlag.src = response[0].flags.png;
     countryNameCommon.innerHTML = response[0].name.common;
     nativeName.innerHTML = response[0].name.official;
@@ -86,7 +85,6 @@ catchCountry().then(function(response) {
             countryAcronym = bordersCountry[i];    
             
             catchCountryName().then(function(countryAcronym){
-                console.log(countryAcronym[0].name.common);
 
                 const borderCountry = document.createElement('div');
                 borderCountry.innerHTML = `

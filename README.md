@@ -23,7 +23,6 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Container Filtro: Criar lista dropdown;
 - [X] Estilização do css info. dos países (página principal);
 - [X] Estilização do css info. dos países (página detalhes);
-- [X] Finalizar função de troca de tema;
 - [X] Conectar projeto a API;
 - [X] Exibindo todos os países na página inicial;
 - [X] Criar funções de navegação entre páginas;
@@ -38,7 +37,8 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Função para exibição dos países de fronteira;
 - [X] Botão voltar para tela inicial;
 - [X] Tornar países de fronteira clicável;
-- [ ] Criar função de filtro por região na página principal;
+- [X] Criar função de filtro por região na página principal;
+- [ ] Finalizar função de troca de tema;
 
 ### Screenshot
 

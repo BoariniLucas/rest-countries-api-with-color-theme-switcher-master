@@ -2,13 +2,14 @@ const switchTheme = document.querySelector('#switch-theme');
 const btnImgTheme = document.querySelector('#btn-img-theme');
 const btnImgBack = document.querySelector('#id-img-btn-back');
 const btnDrop = document.querySelector('#dropbtn');
+const dropdown = document.querySelector('#dropdown');
 const content = document.querySelector('#content');
 const contentDetail = document.querySelector('#contentDetail');
 const baseURL = 'https://restcountries.com/v3.1/';
 const searchCountry = document.querySelector('#searchCountry');
 
+let region;
 let theme = 1;
-
 
 async function catchAllCountries() {
     try {
@@ -36,7 +37,7 @@ catchAllCountries().then(function(response) {
                 <div class="info-country-card">
                     <h2 class="country-name">${country.name.common}</h2>
                     <p>Population: <strong>${country.population}</strong></p>
-                    <p>Region: <strong>${country.region}</strong></p>
+                    <p>Region: <strong class="region">${country.region}</strong></p>
                     <p>Capital: <strong>${country.capital}</strong></p>
                 </div>
             </a>
@@ -57,6 +58,80 @@ searchCountry.addEventListener('input', () => {
         }
     });
 });
+
+btnDrop.addEventListener('click', () => {
+
+    if(dropdown.classList.contains("hidden")) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("visible");
+
+        dropdown.style.visibility = "visible"
+    } else {
+        dropdown.classList.remove("visible");
+        dropdown.classList.add("hidden");
+
+        dropdown.style.visibility = "hidden"
+    }
+});
+
+function regionSearch(countriesRegion){
+    const countriesList = document.querySelectorAll('.country-name');
+
+    region = countriesRegion;
+
+    countriesList.forEach(country => {
+        country.parentNode.parentNode.parentNode.style.display = 'none';        
+    });
+
+    catchRegionCountries().then(function(region) {
+        region.forEach(teste => {
+
+            const countryCard = document.createElement('div');
+                countryCard.innerHTML = `
+                <a href="country.html?country=${teste.name.common}">
+                    <img class="flag" src="${teste.flags.png}">
+                        
+                    <div class="info-country-card">
+                        <h2 class="country-name">${teste.name.common}</h2>
+                        <p>Population: <strong>${teste.population}</strong></p>
+                        <p>Region: <strong class="region">${teste.region}</strong></p>
+                        <p>Capital: <strong>${teste.capital}</strong></p>
+                    </div>
+                </a>
+                `;
+            countryCard.classList.add("country-card");
+            content.appendChild(countryCard); 
+        });
+    });
+
+    dropdown.classList.remove("visible");
+    dropdown.classList.add("hidden");
+
+    dropdown.style.visibility = "hidden"
+}
+
+
+
+
+
+
+
+
+
+async function catchRegionCountries() {
+    try {
+        const response = await fetch(baseURL + `region/${region}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
 
 /*switchTheme.addEventListener('change', () => {
     
@@ -98,52 +173,3 @@ searchCountry.addEventListener('input', () => {
     }
 
 });*/
-
-btnDrop.addEventListener('click', () => {
-    const dropdown = document.querySelector('#dropdown');
-    
-    if(dropdown.classList.contains("hidden")) {
-        dropdown.classList.remove("hidden");
-        dropdown.classList.add("visible");
-
-        dropdown.style.visibility = "visible"
-    } else {
-        dropdown.classList.remove("visible");
-        dropdown.classList.add("hidden");
-
-        dropdown.style.visibility = "hidden"
-    }
-});
-
-/*function detailsCountry(country){
-    mainPage.style.display = "none";
-    detailPage.style.display = "flex";
-
-    const detailFlag = document.querySelector('#detailFlag');
-    const countryNameCommon = document.querySelector('#countryNameCommon');
-    const nativeName = document.querySelector('#nativeName');
-    const population = document.querySelector('#population');
-    const countryRegion = document.querySelector('#countryRegion');
-    const subRegion = document.querySelector('#subRegion');
-    const capital = document.querySelector('#capital');
-
-    const tld = document.querySelector('#tld');
-    const currencies = document.querySelector('#currencies');
-    const languages = document.querySelector('#languages');
-
-    detailFlag.src = country.flags.png;
-    countryNameCommon.innerHTML = country.name.common;
-    nativeName.innerHTML = country.name.official;
-    population.innerHTML = country.population;
-    countryRegion.innerHTML = country.region;
-    subRegion.innerHTML = country.subregion;
-    capital.innerHTML = country.capital;
-
-    tld.innerHTML = country.tld;
-    currencies.innerHTML = country.currencies;
-    languages.innerHTML = country.languages;
-
-    console.log(country);   
-
-}*/
-

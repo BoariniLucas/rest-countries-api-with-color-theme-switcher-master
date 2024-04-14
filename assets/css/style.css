@@ -1,6 +1,7 @@
 :root {
     --principalFont: 'Nunito Sans', sans-serif;
     --bgColorElements: #fff;
+    --bgColorElementsHover: #f1f1f1;
     --fontColor: #000000;
     --bgColor: #fafafa;
     --headerBgColor: #fff;
@@ -122,7 +123,7 @@ h3 {
 
 .dropdown {
     visibility: hidden;
-    display: flex;
+    display: table;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
@@ -132,7 +133,6 @@ h3 {
     height: 8.5em;
     width: 12em;
     margin: 8.5em 2em;
-    padding: 0.5em 1em;
     box-sizing: border-box;
     border-radius: 3px;
     box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
@@ -140,8 +140,16 @@ h3 {
 }
 
 .dropdown a {
+    display: flex;
     font-weight: 600;
     margin: 0.2em 0;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.dropdown a:hover {
+    cursor: pointer;
+    background-color: var(--bgColorElementsHover);
 }
 
 .country-card {
