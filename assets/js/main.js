@@ -26,6 +26,21 @@ async function catchAllCountries() {
     }
 }
 
+async function catchRegionCountries() {
+    try {
+        const response = await fetch(baseURL + `region/${region}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        });
+        return response.json();
+    } catch (error) {
+        console.error(error);
+        throw error;
+    }
+}
+
 catchAllCountries().then(function(response) {
     response.forEach(country => {
 
@@ -110,40 +125,18 @@ function regionSearch(countriesRegion){
     dropdown.style.visibility = "hidden"
 }
 
-
-
-
-
-
-
-
-
-async function catchRegionCountries() {
-    try {
-        const response = await fetch(baseURL + `region/${region}`, {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            }
-        });
-        return response.json();
-    } catch (error) {
-        console.error(error);
-        throw error;
-    }
-}
-
-/*switchTheme.addEventListener('change', () => {
+switchTheme.addEventListener('change', () => {
     
     if(theme == 1) {
 
         btnImgTheme.src = "./assets/images/moon-fill.svg";
-        btnImgBack.src = "./assets/images/arrow-back-white.svg";
+       // btnImgBack.src = "./assets/images/arrow-back-white.svg";
 
         document.body.style.setProperty('--headerTextColor', '#ffffff');
         document.body.style.setProperty('--headerDivisorColor', '#1e2b35');        
         document.body.style.setProperty('--headerBgColor', '#2b3743');
         document.body.style.setProperty('--bgColorElements', '#2b3743');
+        document.body.style.setProperty('--bgColorElementsHover', '#212e37');
         document.body.style.setProperty('--bgColor', '#212e37');
         document.body.style.setProperty('--fontColor', '#ffffff');
         document.body.style.setProperty('--shadowBoxColor', '#1f2c35');
@@ -156,12 +149,13 @@ async function catchRegionCountries() {
     } else {
 
         btnImgTheme.src = "./assets/images/moon.svg";
-        btnImgBack.src = "./assets/images/arrow-back.svg";
+        //btnImgBack.src = "./assets/images/arrow-back.svg";
 
         document.body.style.setProperty('--headerTextColor', '#000000');
         document.body.style.setProperty('--headerDivisorColor', '#efefef');
         document.body.style.setProperty('--headerBgColor', '#ffffff');
         document.body.style.setProperty('--bgColorElements', '#ffffff');
+        document.body.style.setProperty('--bgColorElementsHover', '#2b3743');
         document.body.style.setProperty('--bgColor', '#fafafa');
         document.body.style.setProperty('--fontColor', '#000000');
         document.body.style.setProperty('--shadowBoxColor', '#e6e0e0');
@@ -172,4 +166,4 @@ async function catchRegionCountries() {
         theme = 1;
     }
 
-});*/
+});

@@ -38,7 +38,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Botão voltar para tela inicial;
 - [X] Tornar países de fronteira clicável;
 - [X] Criar função de filtro por região na página principal;
-- [ ] Finalizar função de troca de tema;
+- [X] Finalizar função de troca de tema;
 
 ### Screenshot
 
