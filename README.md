@@ -40,7 +40,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Criar função de filtro por região na página principal;
 - [X] Finalizar função de troca de tema;
 - [X] Conectado o arquivo responsividade aos arquivos HTML;
-- [ ] Estilizar páginas para responsividade;
+- [X] Estilizar páginas para responsividade;
 
 ### Screenshot
 

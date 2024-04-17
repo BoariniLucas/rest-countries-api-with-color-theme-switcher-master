@@ -1,3 +1,67 @@
 @media screen and (max-width: 375px) {
-    
+    .search-container {
+        display: inline;
+        height: 7em;
+    }
+
+    .dropbtn {
+        margin-top: 1em;
+    }
+
+    .search-country {
+        width: 100%;
+    }
+
+    .dropdown {
+        margin: 11.3em 2em;
+        left: 0;
+    }
+
+    .detail-page {
+        height: 45em;
+        padding: 1.5em;
+    }
+
+    .btn-back {
+        width: 8em;
+        margin-top: 0;
+    }
+
+    .detail-container {
+        display: inline;
+        height: 20em;
+        width: 100%;
+        margin-top: 3em;
+    }
+
+    .flag-container {
+        height: 13.31em;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .detail-info {
+        height: 100%;
+        width: 100%;
+    }    
+
+    .info-container {
+        height: 30em;
+        flex-direction: column;
+        margin-top: 1em;
+    }
+
+    .border-contries-container {
+        width: 10em;
+        align-items: start;
+        flex-direction: column;
+        margin-top: 1em;
+        margin-bottom: 3em;
+    }
+
+    footer {
+        text-align: center;
+        width: 70vw;
+        margin: 5% auto
+    }
 }

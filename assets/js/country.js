@@ -16,7 +16,7 @@ const capital = document.querySelector('#capital');
 const tld = document.querySelector('#tld');
 const currencies = document.querySelector('#currencies');
 const languagesCountry = document.querySelector('#languages');
-const borderContriesContainer = document.querySelector('#border-contries-container');
+const borderContriesContainer = document.querySelector('#card-country-border');
 
 let countryAcronym;
 let theme = 1;
