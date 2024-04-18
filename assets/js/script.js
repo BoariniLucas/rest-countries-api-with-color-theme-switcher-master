@@ -11,28 +11,6 @@ export function changeTheme() {
     if(theme == 1) {        
 
         if(loc.pathname == "/country.html") {
-            btnImgBack.src = "./assets/images/arrow-back-white.svg";
-        }
-
-        btnImgTheme.src = "./assets/images/moon-fill.svg";        
-
-        document.body.style.setProperty('--headerTextColor', '#ffffff');
-        document.body.style.setProperty('--headerDivisorColor', '#1e2b35');        
-        document.body.style.setProperty('--headerBgColor', '#2b3743');
-        document.body.style.setProperty('--bgColorElements', '#2b3743');
-        document.body.style.setProperty('--bgColorElementsHover', '#212e37');
-        document.body.style.setProperty('--bgColor', '#212e37');
-        document.body.style.setProperty('--fontColor', '#ffffff');
-        document.body.style.setProperty('--shadowBoxColor', '#1f2c35');
-        document.body.style.setProperty('--btnBgColor', '#2b3743');
-        document.body.style.setProperty('--borderContriesBgColor', '#2b3743');
-        document.body.style.setProperty('--searchImage', 'url(../images/search-outline-white.svg)');
-
-        localStorage.setItem("themeId", 2);
-
-    } else {
-
-        if(loc.pathname == "/country.html") {
             btnImgBack.src = "./assets/images/arrow-back.svg";
         }
 
@@ -49,6 +27,28 @@ export function changeTheme() {
         document.body.style.setProperty('--btnBgColor', '#ffffff');
         document.body.style.setProperty('--borderContriesBgColor', '#ffffff');
         document.body.style.setProperty('--searchImage', 'url(../images/search-outline.svg)');
+
+        localStorage.setItem("themeId", 2);
+
+    } else {
+
+        if(loc.pathname == "/country.html") {
+            btnImgBack.src = "./assets/images/arrow-back-white.svg";
+        }
+
+        btnImgTheme.src = "./assets/images/moon-fill.svg";        
+
+        document.body.style.setProperty('--headerTextColor', '#ffffff');
+        document.body.style.setProperty('--headerDivisorColor', '#1e2b35');        
+        document.body.style.setProperty('--headerBgColor', '#2b3743');
+        document.body.style.setProperty('--bgColorElements', '#2b3743');
+        document.body.style.setProperty('--bgColorElementsHover', '#212e37');
+        document.body.style.setProperty('--bgColor', '#212e37');
+        document.body.style.setProperty('--fontColor', '#ffffff');
+        document.body.style.setProperty('--shadowBoxColor', '#1f2c35');
+        document.body.style.setProperty('--btnBgColor', '#2b3743');
+        document.body.style.setProperty('--borderContriesBgColor', '#2b3743');
+        document.body.style.setProperty('--searchImage', 'url(../images/search-outline-white.svg)');
 
         localStorage.setItem("themeId", 1);
     }
