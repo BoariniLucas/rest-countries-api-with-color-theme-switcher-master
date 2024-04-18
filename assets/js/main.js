@@ -1,15 +1,22 @@
+import { changeTheme } from "./script.js";
+import { loadTheme } from "./script.js";
+import { baseURL } from "./script.js";
+
 const switchTheme = document.querySelector('#switch-theme');
-const btnImgTheme = document.querySelector('#btn-img-theme');
-const btnImgBack = document.querySelector('#id-img-btn-back');
 const btnDrop = document.querySelector('#dropbtn');
 const dropdown = document.querySelector('#dropdown');
 const content = document.querySelector('#content');
-const contentDetail = document.querySelector('#contentDetail');
-const baseURL = 'https://restcountries.com/v3.1/';
 const searchCountry = document.querySelector('#searchCountry');
 
+const regionAfrica = document.querySelector('#region-africa');
+const regionAmericas = document.querySelector('#region-americas');
+const regionAsia = document.querySelector('#region-asia');
+const regionEurope = document.querySelector('#region-europe');
+const regionOceania = document.querySelector('#region-oceania');
+
 let region;
-let theme = 1;
+
+loadTheme();
 
 async function catchAllCountries() {
     try {
@@ -62,31 +69,24 @@ catchAllCountries().then(function(response) {
     });
 });
 
-searchCountry.addEventListener('input', () => {
-    const countriesList = document.querySelectorAll('.country-name');
-
-    countriesList.forEach(country => {
-        if(!country.textContent.toLocaleLowerCase().includes(searchCountry.value.toLocaleLowerCase())){
-            country.parentNode.parentNode.parentNode.style.display = 'none';
-        } else {
-            country.parentNode.parentNode.parentNode.style.display = 'block';
-        }
-    });
+regionAfrica.addEventListener('click', () => {
+    regionSearch('africa');
 });
 
-btnDrop.addEventListener('click', () => {
+regionAmericas.addEventListener('click', () => {
+    regionSearch('americas');
+});
 
-    if(dropdown.classList.contains("hidden")) {
-        dropdown.classList.remove("hidden");
-        dropdown.classList.add("visible");
+regionAsia.addEventListener('click', () => {
+    regionSearch('asia');
+});
 
-        dropdown.style.visibility = "visible"
-    } else {
-        dropdown.classList.remove("visible");
-        dropdown.classList.add("hidden");
+regionEurope.addEventListener('click', () => {
+    regionSearch('europe');
+});
 
-        dropdown.style.visibility = "hidden"
-    }
+regionOceania.addEventListener('click', () => {
+    regionSearch('oceania');
 });
 
 function regionSearch(countriesRegion){
@@ -125,45 +125,34 @@ function regionSearch(countriesRegion){
     dropdown.style.visibility = "hidden"
 }
 
-switchTheme.addEventListener('change', () => {
-    
-    if(theme == 1) {
+searchCountry.addEventListener('input', () => {
+    const countriesList = document.querySelectorAll('.country-name');
 
-        btnImgTheme.src = "./assets/images/moon-fill.svg";
-       // btnImgBack.src = "./assets/images/arrow-back-white.svg";
+    countriesList.forEach(country => {
+        if(!country.textContent.toLocaleLowerCase().includes(searchCountry.value.toLocaleLowerCase())){
+            country.parentNode.parentNode.parentNode.style.display = 'none';
+        } else {
+            country.parentNode.parentNode.parentNode.style.display = 'block';
+        }
+    });
+});
 
-        document.body.style.setProperty('--headerTextColor', '#ffffff');
-        document.body.style.setProperty('--headerDivisorColor', '#1e2b35');        
-        document.body.style.setProperty('--headerBgColor', '#2b3743');
-        document.body.style.setProperty('--bgColorElements', '#2b3743');
-        document.body.style.setProperty('--bgColorElementsHover', '#212e37');
-        document.body.style.setProperty('--bgColor', '#212e37');
-        document.body.style.setProperty('--fontColor', '#ffffff');
-        document.body.style.setProperty('--shadowBoxColor', '#1f2c35');
-        document.body.style.setProperty('--btnBgColor', '#2b3743');
-        document.body.style.setProperty('--borderContriesBgColor', '#2b3743');
-        document.body.style.setProperty('--searchImage', 'url(../images/search-outline-white.svg)');
+btnDrop.addEventListener('click', () => {
 
-        theme = 2;
+    if(dropdown.classList.contains("hidden")) {
+        dropdown.classList.remove("hidden");
+        dropdown.classList.add("visible");
 
+        dropdown.style.visibility = "visible"
     } else {
+        dropdown.classList.remove("visible");
+        dropdown.classList.add("hidden");
 
-        btnImgTheme.src = "./assets/images/moon.svg";
-        //btnImgBack.src = "./assets/images/arrow-back.svg";
-
-        document.body.style.setProperty('--headerTextColor', '#000000');
-        document.body.style.setProperty('--headerDivisorColor', '#efefef');
-        document.body.style.setProperty('--headerBgColor', '#ffffff');
-        document.body.style.setProperty('--bgColorElements', '#ffffff');
-        document.body.style.setProperty('--bgColorElementsHover', '#2b3743');
-        document.body.style.setProperty('--bgColor', '#fafafa');
-        document.body.style.setProperty('--fontColor', '#000000');
-        document.body.style.setProperty('--shadowBoxColor', '#e6e0e0');
-        document.body.style.setProperty('--btnBgColor', '#ffffff');
-        document.body.style.setProperty('--borderContriesBgColor', '#ffffff');
-        document.body.style.setProperty('--searchImage', 'url(../images/search-outline.svg)');
-
-        theme = 1;
+        dropdown.style.visibility = "hidden"
     }
+});
 
+switchTheme.addEventListener('change', () => {
+
+    changeTheme();
 });

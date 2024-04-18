@@ -41,6 +41,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Finalizar função de troca de tema;
 - [X] Conectado o arquivo responsividade aos arquivos HTML;
 - [X] Estilizar páginas para responsividade;
+- [X] Arrumando bug da troca de thema;
 
 ### Screenshot
 
