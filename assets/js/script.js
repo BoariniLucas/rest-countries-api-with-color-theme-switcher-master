@@ -8,8 +8,8 @@ export function changeTheme() {
     
     let theme = localStorage.getItem("themeId");
 
-    if(theme == 1) {        
-
+    if(theme == 1) {     
+        
         if(loc.pathname == "/country.html") {
             btnImgBack.src = "./assets/images/arrow-back.svg";
         }
@@ -27,7 +27,7 @@ export function changeTheme() {
         document.body.style.setProperty('--btnBgColor', '#ffffff');
         document.body.style.setProperty('--borderContriesBgColor', '#ffffff');
         document.body.style.setProperty('--searchImage', 'url(../images/search-outline.svg)');
-
+        
         localStorage.setItem("themeId", 2);
 
     } else {
@@ -61,25 +61,6 @@ export function loadTheme() {
     if(theme == 1){
 
         if(loc.pathname == "/country.html") {
-            btnImgBack.src = "./assets/images/arrow-back.svg";
-        }
-
-        btnImgTheme.src = "./assets/images/moon.svg";
-
-        document.body.style.setProperty('--headerTextColor', '#000000');
-        document.body.style.setProperty('--headerDivisorColor', '#efefef');
-        document.body.style.setProperty('--headerBgColor', '#ffffff');
-        document.body.style.setProperty('--bgColorElements', '#ffffff');
-        document.body.style.setProperty('--bgColorElementsHover', '#f1f1f1');
-        document.body.style.setProperty('--bgColor', '#fafafa');
-        document.body.style.setProperty('--fontColor', '#000000');
-        document.body.style.setProperty('--shadowBoxColor', '#e6e0e0');
-        document.body.style.setProperty('--btnBgColor', '#ffffff');
-        document.body.style.setProperty('--borderContriesBgColor', '#ffffff');
-        document.body.style.setProperty('--searchImage', 'url(../images/search-outline.svg)');
-    } else {
-
-        if(loc.pathname == "/country.html") {
             btnImgBack.src = "./assets/images/arrow-back-white.svg";
         }
 
@@ -97,5 +78,24 @@ export function loadTheme() {
         document.body.style.setProperty('--borderContriesBgColor', '#2b3743');
         document.body.style.setProperty('--searchImage', 'url(../images/search-outline-white.svg)');
 
+    } else {
+
+        if(loc.pathname == "/country.html") {
+            btnImgBack.src = "./assets/images/arrow-back.svg";
+        }
+
+        btnImgTheme.src = "./assets/images/moon.svg";
+
+        document.body.style.setProperty('--headerTextColor', '#000000');
+        document.body.style.setProperty('--headerDivisorColor', '#efefef');
+        document.body.style.setProperty('--headerBgColor', '#ffffff');
+        document.body.style.setProperty('--bgColorElements', '#ffffff');
+        document.body.style.setProperty('--bgColorElementsHover', '#f1f1f1');
+        document.body.style.setProperty('--bgColor', '#fafafa');
+        document.body.style.setProperty('--fontColor', '#000000');
+        document.body.style.setProperty('--shadowBoxColor', '#e6e0e0');
+        document.body.style.setProperty('--btnBgColor', '#ffffff');
+        document.body.style.setProperty('--borderContriesBgColor', '#ffffff');
+        document.body.style.setProperty('--searchImage', 'url(../images/search-outline.svg)');
     }
 }
