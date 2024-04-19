@@ -15,6 +15,8 @@ const tld = document.querySelector('#tld');
 const currencies = document.querySelector('#currencies');
 const languagesCountry = document.querySelector('#languages');
 const borderContriesContainer = document.querySelector('#card-country-border');
+const linkMaps = document.querySelector('#link-maps');
+
 
 let countryAcronym;
 import { changeTheme } from "./script.js";
@@ -58,6 +60,8 @@ catchCountry().then(function(response) {
     const bordersCountry = response[0].borders;
 
     const currenciCountry = currenciesArr[0];
+
+    console.log(response);
     
     detailFlag.src = response[0].flags.png;
     countryNameCommon.innerHTML = response[0].name.common;
@@ -67,7 +71,8 @@ catchCountry().then(function(response) {
     subRegion.innerHTML = response[0].subregion;
     capital.innerHTML = response[0].capital[0];
     tld.innerHTML = response[0].tld[0];
-    currencies.innerHTML = response[0].currencies[currenciCountry].name;    
+    currencies.innerHTML = response[0].currencies[currenciCountry].name;
+
 
     for (let i = 0; i < languagesArr.length; i++) {
         const countryLanguage = languagesArr[i];
@@ -78,7 +83,10 @@ catchCountry().then(function(response) {
         if(i != (counter-1)){
             languagesCountry.innerHTML += ", ";
         }        
-    }  
+    }
+    
+    linkMaps.href = response[0].maps.googleMaps;
+
 
     if(bordersCountry == undefined){
         const borderCountry = document.createElement('div');
@@ -92,10 +100,12 @@ catchCountry().then(function(response) {
             
             catchCountryName().then(function(countryAcronym){
 
+                let countryName = countryAcronym[0].name.common
+
                 const borderCountry = document.createElement('div');
                 borderCountry.innerHTML = `
-                    <a href="country.html?country=${countryAcronym[0].name.common}">
-                        ${countryAcronym[0].name.common}
+                    <a href="country.html?country=${countryName}">
+                        ${countryName}
                     </a>
                 `;    
                 borderContriesContainer.appendChild(borderCountry);

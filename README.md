@@ -42,6 +42,7 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 - [X] Conectado o arquivo responsividade aos arquivos HTML;
 - [X] Estilizar páginas para responsividade;
 - [X] Arrumando bug da troca de thema;
+- [X] Nova funcionalidade para abrir o Google maps no país selecionado;
 
 ### Screenshot
 

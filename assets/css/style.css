@@ -3,6 +3,7 @@
     --bgColorElements: #fff;
     --bgColorElementsHover: #f1f1f1;
     --fontColor: #000000;
+    --fontColorHover: #444343;
     --bgColor: #fafafa;
     --headerBgColor: #fff;
     --headerTextColor: #000000;
@@ -270,6 +271,27 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-top: -1em;
+}
+
+.map-button {
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    width: 10em;
+    padding: 0.4em 0.8em;
+    margin-top: 1.5em;
+    background-color: var(--borderContriesBgColor);
+    box-shadow: 1px 1px 5px 1px var(--shadowBoxColor);
+}
+
+.link-maps {
+    color: var(--fontColor);
+    text-decoration: none;
+}
+
+.link-maps:hover {
+    color: var(--fontColorHover);
 }
 
 .border-contries-container {
