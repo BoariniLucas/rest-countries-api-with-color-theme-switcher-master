@@ -46,19 +46,20 @@ Para o desenvolvimento desse projeto estou utilizando os passos conforme listado
 
 ### Screenshot
 
-<!--Abaixo estou deixando um screenshot do design final do projeto conforme desenvolvi:-->
+Abaixo estou deixando um screenshot do design final do projeto conforme desenvolvi:
 
-<!--![Imagem do meu resultado do projeto](./design/my-solution.jpg)  teste-->
+![Imagem do meu resultado do projeto](./design/my-solution.jpg)
+
 
 ### Link
 
-<!--Estou deixando abaixo o link com o deploy do projeto para visualização direto no navegador:-->
+Estou deixando abaixo o link com o deploy do projeto para visualização direto no navegador:
 
-<!--- Para acessar o formulário clique [aqui](https://multi-step-form-dusky-gamma.vercel.app/)-->
+- Para acessar o formulário clique [aqui](https://rest-countries-api-with-color-theme-switcher-master-nine-zeta.vercel.app/)
 
-<!--### Aprendizados
+### Aprendizados
 
-Durande o desenvolvimento dessa aplicação aprendi uma melhor maneira de como estruturar as páginas do site, então realizarei uma refatoração dos códigos para deixar melhor estruturado. Com isso aprendi mais sobre o sistema de navegação do JavaScript.-->
+Com o desenvolvimento desse projeto, um dos aprendizados que tive foi maneiras melhores de “compartilhar” uma mesma variável entre vários arquivos, onde crio módulos no JavaScript utilizando os import e export. Ao utilizar esse método conseguimos deixar os códigos mais bem organizados e de fácil manutenção.
 
 ### Construido com
 
